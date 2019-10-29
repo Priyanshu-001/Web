@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do's</title>
+	
+</head>
+<body>
+
+	
+<div id="app">
+  {{ message }}
+
+  <ul>
+  	<li v-for="(task,index) in MyList">
+  		{{ task.text }}
+    <button @click="deleteTask(index)">
+      Delete
+    </button>
+    <button @click="Done(index)">
+      Done
+    </button>
+
+  	</li>
+  </ul>
+  
+  	<input v-model="newToDo"  v-on:keyup.enter="add">
+  	<button v-on:click="add"> Add</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript" src="toDo.js"></script>
+</body>
+</html>
